@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tutorials Project</title>
     <style>
-
-        body{
-            margin:0px;
-            padding:0px;
+        body {
+            margin: 0px;
+            padding: 0px;
             box-sizing: border-box;
+            overflow-x: hidden;
+           
         }
+
         .wrapper {
             width: 80%;
             font-size: 20px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin: 0 auto;
-            padding:25px;
+            padding: 25px;
         }
 
         /* Navbar style css */
@@ -29,15 +32,16 @@
             font-size: 24px;
             background-color: tomato;
             margin: 0 auto;
-            padding:10px;
-        }
-        .menu-bar{
-            width:80%;
-            height:auto;
-            margin:20px auto;
+            padding: 10px;
         }
 
-         .menu-item {
+        .menu-bar {
+            width: 80%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .menu-item {
             list-style-type: none;
             display: inline-block;
         }
@@ -49,8 +53,61 @@
         }
 
         /* main content css goes here */
-        .index-value{
+        .index-value {
             text-decoration: none;
+        }
+
+
+
+
+        /* timetable css */
+        caption {
+            font-size: 24px;
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        table,
+        thead,
+        tbody {
+            font-size: 20px;
+        }
+
+        table,
+        td {
+            background-color: rgb(200, 252, 121);
+        }
+
+       
+        /* audio-video css here */
+
+        #audiovideo{
+            width:100%;
+            height:auto;
+            display:flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            align-items:center;
+            
+        }
+        .video,video{
+            margin: 10px;
+            width:80%;
+            height:auto;
+            align-self: flex-end;
+        }
+
+        #top{ 
+            position:fixed;
+            bottom:20px;
+            right:30px;
+            width:50px;
+            height:auto;
+            background-color: tomato;
+        }
+        #top, .icolor{
+            padding:13px;
+            color:white; 
         }
     </style>
 </head>
@@ -58,13 +115,13 @@
 <body>
     <!-- header of the page -->
     <header>
-        <nav class="navbar">
+        <nav id="nav1" class="navbar">
 
             <ul class="menu-bar">
                 <li class="menu-item"><a href="index.html" target="_self">Home</a></li>
-                <li class="menu-item"><a href="timetable.html" target="_parent">Schedule</a></li>
-                <li class="menu-item"><a href="forms.html" target="_top">Job Application Form</a></li>
-                <li class="menu-item"><a href="audiovideo.html" target="_self">Media</a></li>
+                <li class="menu-item"><a href="#schedule" target="_parent">Schedule</a></li>
+                <li class="menu-item"><a href="#jobForm" target="_top">Job Application Form</a></li>
+                <li class="menu-item"><a href="#audiovideo" target="_self">Media</a></li>
             </ul>
         </nav>
     </header>
@@ -72,7 +129,7 @@
     <div class="wrapper">
         <h1>Example of internal linking shown here.</h1>
         <p>
-            Please <b>click on the topics</b> <i>to read about them</i> in the following <b>index table</b> given down
+            Please <b>click on the topics</b><i>to read about them</i> in the following <b>index table</b> given down
             below.
         </p>
         <table style="margin:0 auto;" border="2" cellspacing="0" width="40%">
@@ -103,42 +160,238 @@
             </tbody>
         </table>
 
-        <h2 id="f1">What is html?</h2>
-        <p>
-        <ol>
-            <li>Html stands for hyper-text markup language.</li>
-            <li>It is used to give structure to the web pages. Basically html helps us to design website.</li>
-            <li>Html is case insensitive language.</li>
-            <li>Html elements tell the browser how to display the content. Eg. A paragraph will be enclosed within
-                paragraph elements and tell the browser that it's a paragraph.Basically elements act like labels.</li>
-        </ol>
-        </p>
-        <h2 id="f2">Structure of html document.</h2>
-        <img src="assets/structureHtml.png" alt="html-document-structure">
-        <p>
-        <ol>
-            <li>The &lt;!DOCTYPE html&gt; declaratiion defines that this document is an html5 document.</li>
-            <li>The &lt;html&gt; element is the root element of an HTML page.</li>
-            <li>The &lt;head&gt; element contains meta information about the HTML page.</li>
-            <li>The &lt;title&gt; element specifes a title for the HTML page which is shownn in the browser's title bar
-                or in the page's tab. </li>
-            <li>The &lt;body&gt; element defines the document's body and is a container for all the visible contents,
-                such as headings paragraphs, images, hyperlinks, tables, lists, etc.</li>
-            <li>The &lt;h1&gt; element defines a large heading.</li>
-            <li>The &lt;p&gt; element defines a paragraph.</li>
-        </ol>
-        </p>
-        <h2 id="f3">What are html elements?</h2>
-        <p>The HTML element is everything from the start tag to the end tag.
-            <br>
-            Syntax: <span>&lt;tagname&gt; Content goes here &lt;/tagname&gt;</span>
-        </p>
-        <h2 id="f4">What are attribues?</h2>
-        <p>Attributes contain additional pieces of information. Attributes take the form of an opening tag and
-            additional info is placed inside. <br>
-            Syntax: <span>&lt;tagname atribute="value" &gt;some text &lt;/tagname&gt;</span></p>
+        <section>
+            <h2 id="f1">What is html?</h2>
+        
+            <ol>
+                <li>Html stands for hyper-text markup language.</li>
+                <li>It is used to give structure to the web pages. Basically html helps us to design website.</li>
+                <li>Html is case insensitive language.</li>
+                <li>Html elements tell the browser how to display the content. Eg. A paragraph will be enclosed within
+                    paragraph elements and tell the browser that it's a paragraph.Basically elements act like labels.</li>
+            </ol>
+        </section>
 
-        <img src="assets/htmlElements.png" alt="html-element-sntax">
+        <section>  
+            <h2 id="f2">Structure of html document.</h2>
+            <img src="assets/structureHtml.png" alt="html-document-structure">
+            <p>
+            <ol>
+                <li>The &lt;!DOCTYPE html&gt; declaratiion defines that this document is an html5 document.</li>
+                <li>The &lt;html&gt; element is the root element of an HTML page.</li>
+                <li>The &lt;head&gt; element contains meta information about the HTML page.</li>
+                <li>The &lt;title&gt; element specifes a title for the HTML page which is shownn in the browser's title bar
+                    or in the page's tab. </li>
+                <li>The &lt;body&gt; element defines the document's body and is a container for all the visible contents,
+                    such as headings paragraphs, images, hyperlinks, tables, lists, etc.</li>
+                <li>The &lt;h1&gt; element defines a large heading.</li>
+                <li>The &lt;p&gt; element defines a paragraph.</li>
+            </ol>
+            </p>
+        </section>
+
+        <section>
+            <h2 id="f3">What are html elements?</h2>
+            <p>The HTML element is everything from the start tag to the end tag.
+                <br>
+                Syntax: <span>&lt;tagname&gt; Content goes here &lt;/tagname&gt;</span>
+            </p>
+        </section>
+
+        <sectioin>
+            <h2 id="f4">What are attribues?</h2>
+            <p>Attributes contain additional pieces of information. Attributes take the form of an opening tag and
+                additional info is placed inside. <br>
+                Syntax: <span>&lt;tagname atribute="value" &gt;some text &lt;/tagname&gt;</span></p>
+
+            <img src="assets/htmlElements.png" alt="html-element-sntax">
+        </sectioin>
+
+
+
+
+        <!-- timetable section -->
+        <section id="schedule">
+            <table  width="60%" border="2" cellspacing="0" cellpadding="20px" align="center" text-color="blue">
+                <caption><b><u> BCA <i>(6 <sup>th</sup> sem) </i> Time Table </u></b></caption>
+                <colgroup>
+                    <col span="1" bgcolor="yellow">
+                </colgroup>
+                <thead color="white" bgcolor="yellow">
+                    <tr>
+                        <th>Days</th>
+                        <th>8:00-8:55</th>
+                        <th>8:55-9:50</th>
+                        <th>10:10-11:05</th>
+                        <th>11:05-12:00</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    <tr>
+                        <th>Mon</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Tue</th>
+                        <td colspan="2"> PBC 601 <br>Lab4</td>
+                        <td>TBC 601</td>
+                        <td>TBC 604</td>
+                    </tr>
+                    <tr>
+                        <th>Wed</th>
+                        <td></td>
+                        <td>TBC 603</td>
+                        <td>TBC 604</td>
+                        <td>TBC 602</td>
+                    </tr>
+                    <tr>
+                        <th>Thur</th>
+                        <td>TBC 604</td>
+                        <td>TBC 601</td>
+                        <td>TBC 603</td>
+                        <td>TBC 602</td>
+                    </tr>
+                    <tr>
+                        <th>Fri</th>
+                        <td>TBC 603</td>
+                        <td>TBC 601</td>
+                        <td>TBC 602</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Sat</th>
+                        <td colspan="2">PBC 602 <br> Lab 4</td>
+                        <td> TBC 604</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+            <!-- timetable setcion ends here... -->
+
+
+            <!-- forms section -->
+            <section id="jobForm">
+                <form  border="2" style="width:70%; margin: 0 auto; padding: 20px;">
+                    <fieldset>
+                        <legend>Job Application Form</legend>
+                        <table cellspacing="10">
+                            <tr>
+                                <td><label for="name">Name</label></td>
+                                <td><input type="text" name="nm" id="nm" placeholder="Enter your name" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td><input type="email" name="mail" id="mail" placeholder="Enter your email"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password">Password</label></td>
+                                <td><input type="password" name="password" placeholder="Enter your password" id="pword"
+                                        required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="name">DOB</label></td>
+                                <td><input type="date" name="nm" id="nm" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="gender">Gender</label></td>
+                                <td><input type="radio" name="gender" value="male"><label for="male">Male</label><input
+                                        type="radio" name="gender" value="female"><label for="female">Female</label><input
+                                        type="radio" name="gender" value="others"><label for="others">Otherrs</label></td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td><label for="address">Address</label></td>
+                                <td><input type="text" name="address" id="ad" placeholder="Enter your address" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="cno">Contact no.</label></td>
+                                <td><input type="tel" name="cno" id="phoneno" placeholder="Enter your contact no" max="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="degree">Degree</label></td>
+                                <td><select name="degree" id="cr">
+                                        <optgroup label="Undergraduate Courses">
+                                            <option value="Ba">B.A</option>
+                                            <option value="bca" selected>BCA</option>
+                                            <option value="btech">B.Tech</option>
+                                            <option value="bsc">B.Sc</option>
+                                        </optgroup>
+                                        <optgroup label="Masters Courses">
+                                            <option value="mba">MBA</option>
+                                            <option value="mca">MCA</option>
+                                            <option value="mtech">M.Tech</option>
+                                            <option value="msc">M.Sc</option>
+                                        </optgroup>
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td><label for="positions">Select the positions you want to apply for:</label></td>
+                                <td><input type="checkbox" name="pos">Database Administrator
+                                    <input type="checkbox" name="pos">Data-Scientist</br>
+                                    <input type="checkbox" name="pos">Network Administrator
+                                    <input type="checkbox" name="pos">Full Stack Developer</br>
+                                    <input type="checkbox" name="pos" checked>IT Security Specialist
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="salary">Desired Salary</label></td>
+                                <td><input type="number" name="salary"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="resume">Resume</label></td>
+                                <td><input type="file" name="resume"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="profile">Linkdin Profile</label></td>
+                                <td><input type="url" name="profile" placeholder="Enter your linkdin profile link"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="you">Gap years</label></td>
+                                <td><textarea name="you" cols="30" rows="10"
+                                        placeholder="If any please mention the reason."></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="button" value="Submit">
+                                    <input type="reset" value="Reset">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </section>
+            <!-- form section ends here... -->
+
+            <!-- audio video section -->
+            <section id="audiovideo">
+                <div class="video">
+                    <video  src="assets/tutorial.mp4" poster="assets/cover.png" controls muted
+                        autoplay loop></video>
+                </div>
+                <div class="audio">
+                    <p>Song - Calm down</p>
+                    <audio src="assets/Calm-Down.mp3" controls autoplay loop>
+                        Your browser does not support audio element.
+                    </audio>
+                    <p>Song - Snapping</p>
+                    <audio controls>
+                        <source src="">
+                        <source src="">
+                        Your browser does not support html audio element.
+                    </audio>
+                </div>
+            </section>
+            <section>
+                <a href="#nav1" id="top">
+                        <i class="fa fa-arrow-up icolor" aria-hidden="true"></i>
+                </a>
+            </section>
     </div>
 </body>
 
